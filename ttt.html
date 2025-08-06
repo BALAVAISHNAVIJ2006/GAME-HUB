@@ -11,7 +11,6 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-
         body {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             min-height: 100vh;
@@ -20,7 +19,6 @@
             align-items: center;
             color: #333;
         }
-
         .game-container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
@@ -30,14 +28,12 @@
             max-width: 500px;
             width: 90%;
         }
-
         h1 {
             color: #2575fc;
             margin-bottom: 20px;
             font-size: 2.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         .status {
             font-size: 1.5rem;
             margin-bottom: 20px;
@@ -46,14 +42,12 @@
             align-items: center;
             justify-content: center;
         }
-
         .board {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 10px;
             margin-bottom: 30px;
         }
-
         .cell {
             width: 100px;
             height: 100px;
@@ -66,26 +60,21 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
         .cell:hover {
             background: #e0e0e0;
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
-
         .cell:active {
             transform: translateY(2px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         .cell.x {
             color: #2575fc;
         }
-
         .cell.o {
             color: #6a11cb;
         }
-
         .reset-btn {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
@@ -97,22 +86,18 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
         .reset-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
         }
-
         .reset-btn:active {
             transform: translateY(1px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-
         .winning-cell {
             background: #c8e6c9 !important;
             animation: pulse 1s infinite alternate;
         }
-
         @keyframes pulse {
             from {
                 transform: scale(1);
@@ -121,21 +106,18 @@
                 transform: scale(1.05);
             }
         }
-
         .score-board {
             display: flex;
             justify-content: space-around;
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
-
         .score-box {
             background: #f0f0f0;
             padding: 10px 20px;
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         .score-box span {
             font-weight: bold;
             color: #2575fc;
@@ -168,7 +150,6 @@
         
         <button class="reset-btn" id="resetBtn">Reset Game</button>
     </div>
-
     <script>
         // Game state variables
         let currentPlayer = 'X';
@@ -242,7 +223,7 @@
             }
             
             if (roundWon) {
-                statusDisplay.textContent = Player ${currentPlayer} wins!;
+                statusDisplay.textContent = `Player ${currentPlayer} wins!`;
                 gameActive = false;
                 highlightWinningCells(winningCombination);
                 scores[currentPlayer]++;
@@ -261,7 +242,7 @@
             
             // Switch player
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            statusDisplay.textContent = Player ${currentPlayer}'s turn;
+            statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
         }
         
         // Highlight winning cells
@@ -276,7 +257,7 @@
             currentPlayer = 'X';
             gameBoard = ['', '', '', '', '', '', '', '', ''];
             gameActive = true;
-            statusDisplay.textContent = Player ${currentPlayer}'s turn;
+            statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
             
             cells.forEach(cell => {
                 cell.textContent = '';
